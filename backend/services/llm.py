@@ -1,15 +1,15 @@
 import json
-import os
 
 from groq import AsyncGroq
 
+from config import get_settings
 from logger import get_logger
 
 log = get_logger(__name__)
 
 
 async def generate_briefing(prompt: str) -> dict:
-    client = AsyncGroq(api_key=os.environ["GROQ_API_KEY"])
+    client = AsyncGroq(api_key=get_settings().GROQ_API_KEY)
 
     log.info("Sending prompt to Groq | model=llama-3.1-8b-instant prompt_chars=%d", len(prompt))
 

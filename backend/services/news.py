@@ -1,8 +1,9 @@
-import os
 import urllib.parse
 from datetime import datetime, timedelta, timezone
 
 import httpx
+
+from config import get_settings
 
 NEWS_API_URL = "https://newsapi.org/v2/everything"
 
@@ -68,7 +69,7 @@ async def fetch_articles(
     sort_by: str = "relevancy",
     domains: str | None = None,
 ) -> list[dict]:
-    api_key = os.environ["NEWS_API_KEY"]
+    api_key = get_settings().NEWS_API_KEY
     default_from = (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%d")
 
     params = {
