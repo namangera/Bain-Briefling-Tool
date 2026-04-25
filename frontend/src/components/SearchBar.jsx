@@ -9,7 +9,7 @@ export default function SearchBar({ value, onChange, onSubmit, loading, disabled
       <input
         type="text"
         className="search-input"
-        placeholder="Enter company name (e.g. Apple, Volkswagen)"
+        placeholder="Enter company name (e.g. Bain & Company)"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         disabled={loading}

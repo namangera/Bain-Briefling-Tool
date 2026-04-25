@@ -1,5 +1,4 @@
 import logging
-import os
 import sys
 
 LOG_FILE = "/tmp/app.log"
@@ -9,7 +8,9 @@ _configured = False
 def get_logger(name: str) -> logging.Logger:
     global _configured
     if not _configured:
-        level = os.getenv("LOG_LEVEL", "INFO").upper()
+        from config import get_settings
+        level = get_settings().LOG_LEVEL.upper()
+
         fmt = logging.Formatter(
             "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
             datefmt="%Y-%m-%dT%H:%M:%S",
