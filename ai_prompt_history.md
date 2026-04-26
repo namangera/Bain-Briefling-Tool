@@ -294,3 +294,22 @@ Two updates needed:
 **User:** Export this entire chat log as a markdown file, call it `ai_prompt_history.md`.
 
 **Assistant:** *(This file)*
+
+
+
+# Another Conversation - Spec formatting
+
+**User:** format this spec doc for me
+
+**Assistant:**
+
+Done. Changes made:
+
+Added a Table of Contents with anchor links
+Renamed "What it does" → "Overview" for consistency
+Converted the stack list and env var blocks into tables
+Converted error handling into a table
+Promoted endpoint names to #### subheadings for cleaner hierarchy
+Added blank lines after ### headings for better readability
+Converted the deployment bullet list to a table with a blockquote for the .gitignore note
+Fixed a stray reference to "Claude" (should be Groq) in the POST/api/brief description
